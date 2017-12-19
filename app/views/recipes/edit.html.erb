@@ -1,28 +1,5 @@
 # no diretório recipes que esta na arvore app/views/recipe é onde é criado os templates da aplicação
 
-<%= form_for(@recipe) do | formulario | %>
+<h1> Editando Recitas </h1>
 
-    <p>
-      <%= formulario.label :Nome %></br>
-      <%= formulario.text_field :name %>
-    </p>
-    <p>
-      <%= formulario.label :Ingredientes %></br>
-      <%= formulario.text_area :stuff, cols: 20, rows: 5 %>
-    </p>
-    <p>
-      <%= formulario.label :Calorias %></br>
-      <%= formulario.number_field :calories %>
-    </p>
-    <p>
-      <%= formulario.label :Modo_de_Preparo %></br>
-      <%= formulario.text_area :prepare_mode, cols: 20, rows: 5 %>
-    </p>
-    <p>
-      <%= formulario.label :Custos %></br>
-      <%= formulario.number_field :cost %>
-    </p>
-    <p>
-      <%= formulario.submit %>
-    </p>
-   <% end %> 
+<%= render 'form' %>

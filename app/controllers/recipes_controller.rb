@@ -19,7 +19,6 @@ class RecipesController < ApplicationController
    # metodo para atualizar a recita editada
    def update
       @recipe = Recipe.find(params[:id])
-      recipe_param = params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
       @recipe.update(recipe_param)
       redirect_to @recipe
    end
@@ -31,7 +30,6 @@ class RecipesController < ApplicationController
    
    # metodo para armazenar os dados da nova recieta no banco de dados 
    def create
-      recipe_param = params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
       @recipe = Recipe.new(recipe_param)
       @recipe.save
       redirect_to @recipe
@@ -42,6 +40,11 @@ class RecipesController < ApplicationController
      @recipe = Recipe.find(params[:id])
      @recipe.destroy
      redirect_to recipes_url
+   end
+
+   # metodo de reaproveitamento de código da permissão para edição e criação de receitas
+   private def recipe_param
+    params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
    end
 
 end
