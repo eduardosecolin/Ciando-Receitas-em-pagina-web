@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
 
    # metodo que retorna o indice das receitas
     def index
-      @recipes = Recipe.all
+      @recipes = Recipe.created_at
     end
    
    # metodo que mostra a receita em outra janela através de um link
