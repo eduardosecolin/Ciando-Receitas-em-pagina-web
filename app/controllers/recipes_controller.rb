@@ -23,4 +23,18 @@ class RecipesController < ApplicationController
       @recipe.update(recipe_param)
       redirect_to @recipe
    end
+
+   # metodo para criar uma nova receita
+   def new
+      @recipe = Recipe.new
+   end
+   
+   # metodo para armazenar os dados da nova recieta no banco de dados 
+   def create
+      recipe_param = params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
+      @recipe = Recipe.new(recipe_param)
+      @recipe.save
+      redirect_to @recipe
+   end
+
 end
