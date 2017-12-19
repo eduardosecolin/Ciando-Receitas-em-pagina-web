@@ -37,4 +37,11 @@ class RecipesController < ApplicationController
       redirect_to @recipe
    end
 
+   # metodo para deletar uma receita
+   def destroy
+     @recipe = Recipe.find(params[:id])
+     @recipe.destroy
+     redirect_to recipes_url
+   end
+
 end
