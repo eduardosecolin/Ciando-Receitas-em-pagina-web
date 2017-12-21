@@ -4,12 +4,16 @@
    <article>
     <header> 
      <h2><%= link_to item.name, item %></h2>
+     <%= imagem(item) %>
     </header>
     <p> 
      <%= truncate(item.stuff, lenght:15, separator: ' ') %>
     </p>
     <p> 
        <%= formata_caloria(item) %>
+    </p>
+    <p> 
+       <%= item.duration.to_formatted_s(:time) %> min
     </p>
     <table>
      <tr>

@@ -44,7 +44,8 @@ class RecipesController < ApplicationController
 
    # metodo de reaproveitamento de código da permissão para edição e criação de receitas
    private def recipe_param
-    params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost)
+    params.require(:recipe).permit(:name, :stuff, :calories, :prepare_mode, :cost, 
+                   :kind, :duration, :portion, :poster)
    end
 
 end

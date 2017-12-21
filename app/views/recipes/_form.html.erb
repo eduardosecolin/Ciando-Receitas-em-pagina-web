@@ -9,6 +9,10 @@
           <%= formulario.text_area :stuff, cols: 20, rows: 5 %>
         </p>
         <p>
+          <%= formulario.label :Tipo %></br>
+          <%= formulario.text_field :kind %>
+        </p>
+        <p>
           <%= formulario.label :Calorias %></br>
           <%= formulario.number_field :calories %>
         </p>
@@ -17,8 +21,20 @@
           <%= formulario.text_area :prepare_mode, cols: 20, rows: 5 %>
         </p>
         <p>
+          <%= formulario.label :Tempo_de_Preparo %></br>
+          <%= formulario.time_select :duration %>
+        </p>
+        <p>
+          <%= formulario.label :Porções %></br>
+          <%= formulario.text_field :portion %>
+        </p>
+        <p>
           <%= formulario.label :Custos %></br>
           <%= formulario.number_field :cost %>
+        </p>
+        <p>
+          <%= formulario.label :Poster %></br>
+          <%= formulario.text_field :poster, placeholder: ".GIF, .JPEG, .JPG ou .PNG" %>
         </p>
         <p>
           <%= formulario.submit %>
