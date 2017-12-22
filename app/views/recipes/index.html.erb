@@ -1,31 +1,33 @@
-<h1><%= pluralize(@recipes.size, "Receita", "Receitas") %></h1>
+
+<div class="container">
+
+    <div class="row">
+        <div class="clo-lg-12">
+           <h1 class="page-header"><%= pluralize(@recipes.size, "Receita", "Receitas") %>
+           <small class="nova_receita"><%= link_to 'Nova Receita', new_recipe_path %></small>
+           </h1>
+       </div> 
+   </div>  
+   
 
  <% @recipes.each do |item| %>
-   <article>
-    <header> 
-     <h2><%= link_to item.name, item %></h2>
-     <%= imagem(item) %>
-    </header>
-    <p> 
-     <%= truncate(item.stuff, lenght:15, separator: ' ') %>
-    </p>
-    <p> 
-       <%= formata_caloria(item) %>
-    </p>
-    <p> 
-       <%= item.duration.to_formatted_s(:time) %> min
-    </p>
-    <table>
-     <tr>
-      <th>Modo de Preparo:</th>
-       <td><%= item.prepare_mode %></td>
-      </tr>
-      <th>Custo de Prato:</th>
-      <td><%= number_to_currency(item.cost) %></td> 
-      </tr>
-     </table>
-    </article>  
-  <%end %> 
-  </br> 
+ <div class="row">
+     <div class="col-md-2"> 
+     <%= link_to imagem(item), item %>
+     </div>
+     <div class="col-md-7">
+         <h3><%= link_to item.name, item %></h3>
+         <p><%= truncate(item.stuff, lenght:15, separator: ' ') %></p>
+         <h4>Calorias:</h4>
+         <p><%= formata_caloria(item) %></p>
+         <h4>Modo de Preparo:</h4>
+         <p><%= item.duration.to_formatted_s(:time) %></p>
+         <h4>Custo:</h4>
+         <p><%= item.cost %></p>
+
+     </div>
+  </div>
+  <hr>
+
+  <% end %>
   
-  <%= link_to 'Nova Receita', new_recipe_path %>
