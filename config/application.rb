@@ -8,6 +8,11 @@ Bundler.require(*Rails.groups)
 
 module Receitanet
   class Application < Rails::Application
+    # Codigo para alterar a datezone para brasilia
+    config.time_zone = 'Brasilia'
+    # Codigo que configura a aplicação para traduzir para o portugues
+    config.i18n.default_locale = "pt-BR"
+    I18n.config.available_locales = "pt-BR"
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
