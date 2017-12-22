@@ -19,8 +19,11 @@ class RecipesController < ApplicationController
    # metodo para atualizar a recita editada
    def update
       @recipe = Recipe.find(params[:id])
-      @recipe.update(recipe_param)
-      redirect_to @recipe
+      if @recipe.update(recipe_param)
+        redirect_to @recipe
+      else
+        render :edit
+      end  
    end
 
    # metodo para criar uma nova receita
@@ -31,8 +34,11 @@ class RecipesController < ApplicationController
    # metodo para armazenar os dados da nova recieta no banco de dados 
    def create
       @recipe = Recipe.new(recipe_param)
-      @recipe.save
-      redirect_to @recipe
+      if @recipe.save
+        redirect_to @recipe
+      else
+        render :new
+      end  
    end
 
    # metodo para deletar uma receita
