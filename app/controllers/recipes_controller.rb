@@ -20,7 +20,7 @@ class RecipesController < ApplicationController
    def update
       @recipe = Recipe.find(params[:id])
       if @recipe.update(recipe_param)
-        redirect_to @recipe
+        redirect_to @recipe, notice: "Receita modificada com sucesso!!!"
       else
         render :edit
       end  
@@ -35,7 +35,8 @@ class RecipesController < ApplicationController
    def create
       @recipe = Recipe.new(recipe_param)
       if @recipe.save
-        redirect_to @recipe
+        #flash[:notice] = "Receita criada com sucesso!!!"
+        redirect_to @recipe, notice: "Receita criada com sucesso!!!"
       else
         render :new
       end  
@@ -45,7 +46,7 @@ class RecipesController < ApplicationController
    def destroy
      @recipe = Recipe.find(params[:id])
      @recipe.destroy
-     redirect_to recipes_url
+     redirect_to recipes_url, alert: "Receita excluída com sucesso!!!"
    end
 
    # metodo de reaproveitamento de código da permissão para edição e criação de receitas
