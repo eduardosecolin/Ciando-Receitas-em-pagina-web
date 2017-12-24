@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :comments
   #avisando o heroku da minha aplicação
   root 'recipes#index'
   # criando rotas(routers), com o controler e indice
