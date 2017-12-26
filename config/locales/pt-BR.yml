@@ -1,19 +1,24 @@
 
 pt-BR:
   activerecord:
-   models:
-    recipe: Receita
-   attributes:
-    recipe:
-     name: Nome da receita
-     stuff: Ingredientes
-     calories: Calorias
-     kind: Tipo
-     prepare_mode: Modo de preparo
-     cost: Custo
-     portion: Porção
-     duration: Tempo de preparo
-     poster: Imagem 
+    models:
+     recipe: Receita
+     comment: Comentário
+    attributes:
+      recipe:
+        name: Nome da receita
+        stuff: Ingredientes
+        calories: Calorias
+        kind: Tipo
+        prepare_mode: Modo de preparo
+        cost: Custo
+        portion: Porção
+        duration: Tempo de preparo
+        poster: Imagem 
+      comment:
+        name: Nome
+        rating: Estrelas
+        comment: Comentário 
     errors:
       messages:
         record_invalid: 'A validação falhou: %{errors}'

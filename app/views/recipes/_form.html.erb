@@ -1,5 +1,5 @@
 <%= form_for(@recipe) do | formulario | %>
-  <%= render 'layouts/errors' %>
+  <%= render 'layouts/errors', object: @recipe %>
     
         <p class="form-group">
           <%= formulario.label :Nome %></br>
