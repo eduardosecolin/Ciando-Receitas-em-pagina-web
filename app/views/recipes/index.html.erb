@@ -23,7 +23,7 @@
          <h4>Modo de Preparo:</h4>
          <p><%= item.duration.to_formatted_s(:time) %></p>
          <h4>Custo:</h4>
-         <p><%= item.cost %></p>
+         <p><%= number_to_currency(item.cost) %></p>
 
      </div>
   </div>

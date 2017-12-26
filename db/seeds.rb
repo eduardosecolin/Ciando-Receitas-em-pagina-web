@@ -61,5 +61,5 @@ receita.comments.create!(name: "Paulo Xavier", rating: 5, comment: "Delicioso!")
 receita.comments.create!(name: "Roseli Secolin", rating: 4, comment: "Muito bom!")
 receita.comments.create!(name: "Maria Eduarda", rating: 4, comment: "Gostoso!")
 
-receita = Recipe.find_by(name: 'Brigadeiro')
+receita = Recipe.find_by(name: 'Brigadeiro de Panela')
 receita.comments.create!(name: "Mauro Silva", rating: 3, comment: "O melhor que ja comi!")
